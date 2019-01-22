@@ -1,6 +1,12 @@
-export default () => (
+import React from 'react';
+
+import arrownext from '../../assets/arrownext.svg';
+
+import { basicFilter } from '../../utils/textFilter';
+
+export default ({ title: { rendered } }) => (
   <li>
-    <h4>কি, কেন এবং কিভাবে?</h4>
-    <img src={arrownext} />
+    <h4>{basicFilter(rendered)}</h4>
+    <img alt="next" src={arrownext} />
   </li>
 )

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Home from './components/Home/Home';
+import Footer from './components/Footer';
+
 import './App.css';
-import heart from './heart.svg';
-import arrowdown from './arrowdown.svg';
-import arrownext from './arrownext.svg';
 
 class App extends Component {
   render() {

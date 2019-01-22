@@ -138,6 +138,10 @@ section {
   top: 12px;
 }
 
+.list li:last-child img {
+  display: none;
+}
+
 .list li:nth-child(3n) img {
   display: none;
 }
@@ -146,6 +150,9 @@ section {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
+  background: #e7e7e7;
+  background: linear-gradient(to top, #e7e7e7 0%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=0 );
 }
 
 .footer>div {
@@ -154,11 +161,8 @@ section {
 
 .footer .left {
   width: 70%;
-  background: #e7e7e7;
 }
 
 .footer .right {
   width: 30%;
-  color: #fff;
-  background: #000;
 }
