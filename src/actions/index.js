@@ -24,17 +24,17 @@ export const getSearchResult = (data, term) => {
 }
 
 export const getFavoritePosts = () => {
-  // const samplePosts = [{
-  //   id: 1,
-  //   title: 'রিঅ্যাক্টঃ আউলা কথা'
-  // }, {
-  //   id: 2,
-  //   title: 'রিঅ্যাক্ট ব্যাসিক্সঃ সিরিয়াস কথা'
-  // }, {
-  //   id: 3,
-  //   title: 'রিঅ্যাক্ট অপ্টিমাইজেশনঃ কথার কথা'
-  // }]
-  // localStorage.setItem('reactZunoPosts', JSON.stringify(samplePosts));
+  const samplePosts = [{
+    id: 1,
+    title: 'রিঅ্যাক্ট ব্যাসিকসঃ প্রোজেক্ট সেটআপ'
+  }, {
+    id: 2,
+    title: 'রিঅ্যাক্ট ব্যাসিকসঃ জেএসএক্স(JSX) পরিচিতি'
+  }, {
+    id: 3,
+    title: 'রিঅ্যাক্ট ব্যাসিকসঃ ইলিমেন্ট (Element) রেন্ডার'
+  }]
+  localStorage.setItem('reactZunoPosts', JSON.stringify(samplePosts));
   let posts = localStorage.getItem('reactZunoPosts');
   if(posts)
     posts = JSON.parse(posts);
@@ -48,7 +48,7 @@ export const getFavoritePosts = () => {
 
 export const getPost = id => {
   const data = axios(`https://with.zonayed.me/wp-json/wp/v2/posts/${id}`);
-  
+
   return {
     type: 'GET_POST',
     payload: data

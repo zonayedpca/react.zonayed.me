@@ -17,12 +17,14 @@ section {
 }
 
 .brand span {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 900;
+  margin-top: 3px;
+  margin-left: 10px;
 }
 
 .brand .logo {
-  width: 60px;
+  width: 50px;
 }
 
 .intro {
@@ -30,12 +32,12 @@ section {
 }
 
 .intro h2 {
-  font-size: 42px;
+  font-size: 52px;
   margin-bottom: 5px;
 }
 
 .intro p {
-  font-size: 20px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -53,9 +55,11 @@ section {
 }
 
 .search-area span {
-  font-size: 12px;
+  display: inline-block;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.6);
   margin-left: 3px;
+  margin-top: 5px;
 }
 
 .search-fav-area {
@@ -83,7 +87,7 @@ section {
   padding: 25px 30px;
   margin: 0 15px;
   border-radius: 4px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .search-fav-area ul li img {
@@ -98,7 +102,7 @@ section {
 
 .section-title h3 {
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -125,7 +129,7 @@ section {
   position: relative;
   width: calc(100%/3 - 30px);
   border: solid 1px #e7e7e7;
-  padding: 25px;
+  padding: 30px 25px;
   margin: 0 15px;
   margin-bottom: 30px;
   border-radius: 4px;
@@ -134,6 +138,7 @@ section {
 li h4 a {
   text-decoration: none;
   color: inherit;
+  font-size: 18px;
 }
 
 .list li img {
