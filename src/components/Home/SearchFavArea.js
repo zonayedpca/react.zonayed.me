@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import FavCard from './FavCard';
 import SearchCard from './SearchCard';
 
-const SearchFavArea = ({ searchVisibility, search }) => (
+const SearchFavArea = ({ searchVisibility, search, favorite }) => (
   <section className="search-fav-area">
     <ul>
-      {searchVisibility ? (search && (search.length <= 0 ? <p>নতুন টপিক সাজেস্ট করুন</p> : (search.map(({ id, title }) => <SearchCard key={id} title={title} />)))) : (<FavCard />)}
+      {searchVisibility ? (search && (search.length <= 0 ? <p>নতুন টপিক সাজেস্ট করুন</p> : (search.map(({ id, title }) => <SearchCard key={id} id={id} title={title} />)))) : (favorite.length > 0 ? (favorite.map(({id, title}) => <FavCard key={id} id={id} title={title} />)) : 'Nothing')}
     </ul>
   </section>
 )
 
-export default connect(({ searchVisibilityReducer, searchReducer }) => ({ searchVisibility: searchVisibilityReducer, search: searchReducer }))(SearchFavArea);
+export default connect(({ searchVisibilityReducer, favoriteReducer, searchReducer }) => ({ searchVisibility: searchVisibilityReducer, favorite: favoriteReducer, search: searchReducer }))(SearchFavArea);

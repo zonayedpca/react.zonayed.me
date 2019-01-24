@@ -131,6 +131,11 @@ section {
   border-radius: 4px;
 }
 
+li h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .list li img {
   position: absolute;
   width: 45px;
@@ -144,6 +149,37 @@ section {
 
 .list li:nth-child(3n) img {
   display: none;
+}
+
+.navbar-post-area {
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  background: #e7e7e7;
+  border-bottom: solid 2px #000;
+}
+
+.content-area .title {
+  font-size: 48px;
+  margin-bottom: 25px;
+  padding: 0 160px;
+}
+
+.content-area .content section {
+  padding: 0;
+}
+
+.content-area .content p,
+.section-divider {
+  padding: 0 160px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.content-area .content figure {
+  text-align: center;
+  margin: 25px 0;
 }
 
 .footer {

@@ -17,7 +17,7 @@ const Series = ({ basic }) => {
       </div>
       <ul className="list basic-list">
         {basic.map(({id, title}) => (
-          <Card key={id} title={title} />
+          <Card key={id} id={id} title={title} />
         ))}
       </ul>
     </div>
