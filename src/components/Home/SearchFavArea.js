@@ -7,7 +7,9 @@ import SearchCard from './SearchCard';
 const SearchFavArea = ({ searchVisibility, search, favorite }) => (
   <section className="search-fav-area">
     <ul>
-      {searchVisibility ? (search && (search.length <= 0 ? <p>নতুন টপিক সাজেস্ট করুন</p> : (search.map(({ id, title }) => <SearchCard key={id} id={id} title={title} />)))) : (favorite.length > 0 ? (favorite.map(({id, title}) => <FavCard key={id} id={id} title={title} />)) : 'Nothing')}
+      {searchVisibility ? (search && (search.length <= 0 ?
+        <div class="no-result"><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/zonayedpca/react.zonayed.me" className="btn-suggest">নতুন টপিক সাজেস্ট করুন</a></div>
+         : (search.map(({ id, title }) => <SearchCard key={id} id={id} title={title} />)))) : (favorite.length > 0 ? (favorite.map(({id, title}) => <FavCard key={id} id={id} title={title} />)) : 'Nothing')}
     </ul>
   </section>
 )

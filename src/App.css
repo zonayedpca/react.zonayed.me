@@ -78,6 +78,22 @@ section {
   padding: 0 15px;
 }
 
+.search-fav-area ul .no-result {
+  width: 100%;
+  display: block;
+  padding: 33px 0;
+  text-align: center;
+}
+
+.search-fav-area ul .no-result a {
+  background: #40a5c1;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
 .search-fav-area ul li {
   display: flex;
   align-items: center;
@@ -189,6 +205,8 @@ li h4 a {
 
 .footer {
   display: flex;
+  font-size: 18px;
+  padding: 100px 70px;
   flex-wrap: wrap;
   flex: 1;
   background: #e7e7e7;
@@ -196,14 +214,53 @@ li h4 a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=0 );
 }
 
-.footer>div {
-  padding: 40px 60px;
+.footer>* {
+  width: calc(100% / 3 - 20px);
+  margin: 0 10px;
 }
 
-.footer .left {
-  width: 70%;
+.footer ul li {
+  margin: 15px 0;
 }
 
-.footer .right {
-  width: 30%;
+.footer p {
+  line-height: 1.8;
+}
+
+.footer .title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.footer .resource {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer .resource>* {
+  width: calc(100% / 2);
+}
+
+.footer .credit {
+    align-self: center;
+}
+
+.footer .credit .love {
+  color: #F44336;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+  border-bottom: dashed 1px #333;
+}
+
+.footer .credit a {
+  background: #333;
+  padding: 1px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
 }
