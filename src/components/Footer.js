@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => (
   <footer className="footer-area">
-    <div className="footer">
+    <div className="footer area">
       <ul>
         <li className="title">সম্পর্কেঃ</li>
         <li><p>প্রোজেক্টটি সম্পূর্ণ সোর্স কোডসহ <a target="_blank" rel="noopener noreferrer" href="https://github.com/zonayedpca/react.zonayed.me">গিটহাবে</a> রয়েছে। আপনার ভালো লেগে থাকলে স্টার দিয়ে আসবেন। আপনার পরামর্শ, মন্তব্য এবং ভুলত্রুটি গিটহাবে ইস্যু করে দেওয়ার জন্যে অনুরোধ থাকলো</p></li>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Navbar from './Navbar';
 import Content from './Content';
-import ActionButton from './ActionButton';
 import Comment from './Comment';
 
 import { getPost } from '../../actions';
@@ -14,6 +13,7 @@ class Post extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const postId = this.props.match.params.id;
     this.props.getPost(postId);
   }
@@ -23,7 +23,6 @@ class Post extends Component {
       <React.Fragment>
         <Navbar />
         <Content />
-        <ActionButton />
         <Comment />
       </React.Fragment>
     )

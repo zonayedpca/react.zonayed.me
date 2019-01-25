@@ -1,5 +1,10 @@
 section {
-  padding: 50px 60px;
+  padding: 50px 0;
+}
+
+.area {
+  width: 1230px;
+  margin: 0 auto;
 }
 
 .intro-area {
@@ -14,6 +19,8 @@ section {
   display: flex;
   align-items: center;
   width: 220px;
+  text-decoration: none;
+  color: #21232a;
 }
 
 .brand span {
@@ -173,11 +180,10 @@ li h4 a {
 }
 
 .navbar-post-area {
-  padding: 20px 60px;
+  width: 1230px;
   display: flex;
   align-items: center;
-  background: #e7e7e7;
-  border-bottom: solid 2px #000;
+  margin: 0 auto;
 }
 
 .content-area .title {
@@ -203,15 +209,28 @@ li h4 a {
   margin: 25px 0;
 }
 
-.footer {
-  display: flex;
-  font-size: 18px;
-  padding: 100px 70px;
-  flex-wrap: wrap;
-  flex: 1;
+.content-area .content iframe {
+  margin: 25px 0;
+}
+
+.content-area .content a {
+  text-decoration: none;
+  color: #333;
+  border-bottom: dashed 1px #333;
+}
+
+.footer-area {
+  padding: 100px 0;
   background: #e7e7e7;
   background: linear-gradient(to top, #e7e7e7 0%,#ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#ffffff',GradientType=0 );
+}
+
+.footer {
+  display: flex;
+  font-size: 18px;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 .footer>* {

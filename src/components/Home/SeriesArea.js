@@ -14,7 +14,9 @@ class SeriesArea extends Component {
   render() {
     return (
       <section className="series-area">
-        <Series />
+        <div className="area">
+          <Series />
+        </div>
       </section>
     )
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import ActionButton from './ActionButton';
+
 import { createMarkup } from '../../utils/createMarkup';
 
 const Content = ({ post }) => {
@@ -14,6 +16,7 @@ const Content = ({ post }) => {
       </div>
       <div className="content">
         <div dangerouslySetInnerHTML={createMarkup(post.content.rendered)}></div>
+        <ActionButton />
       </div>
     </section>
   )
