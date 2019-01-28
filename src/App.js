@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { getFavoritePosts } from './actions';
+import { getReadPost, getFavoritePosts } from './actions';
 
 import Home from './components/Home/Home';
 import Post from './components/Post/Post';
@@ -13,6 +13,7 @@ import './App.css';
 class App extends Component {
   componentDidMount() {
     this.props.getFavoritePosts();
+    this.props.getReadPost();
   }
 
   render() {
@@ -28,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getFavoritePosts })(App);
+export default connect(null, { getReadPost, getFavoritePosts })(App);

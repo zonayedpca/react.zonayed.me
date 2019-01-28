@@ -119,6 +119,15 @@ section {
   margin-right: 0;
 }
 
+p.no-fav-post {
+  padding: 40px 0;
+  margin: 0 auto;
+}
+
+.loader>div {
+  margin: 0 auto;
+}
+
 .section-title {
   margin-bottom: 25px;
 }
@@ -188,8 +197,9 @@ li h4 a {
 
 .content-area .title {
   font-size: 48px;
-  margin-bottom: 25px;
-  padding: 0 160px;
+  width: 1020px;
+  margin: 0 auto;
+  padding-bottom: 25px;
 }
 
 .content-area .content section {
@@ -198,10 +208,11 @@ li h4 a {
 
 .content-area .content p,
 .section-divider {
-  padding: 0 160px;
+  width: 1020px;
   color: rgba(0, 0, 0, 0.85);
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.7;
+  margin: 0 auto;
 }
 
 .content-area .content figure {
@@ -217,6 +228,34 @@ li h4 a {
   text-decoration: none;
   color: #333;
   border-bottom: dashed 1px #333;
+}
+
+.shortcode_wysija {
+  display: none;
+}
+
+.action-button-area {
+  display: flex;
+  width: 1020px;
+  margin: 25px auto;
+}
+
+.read,
+.favorite {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.read img,
+.favorite img {
+  width: 30px;
+  padding-right: 5px;
+}
+
+.comment-area {
+  width: 1020px;
+  margin: 0 auto;
 }
 
 .footer-area {

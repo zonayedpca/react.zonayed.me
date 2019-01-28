@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Loader from '../Loader';
 import Card from './Card';
 
 import arrowdown from '../../assets/arrowdown.svg';
 
 const Series = ({ basic }) => {
   if(!basic) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   return (
     <div className="series basic">

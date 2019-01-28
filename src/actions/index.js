@@ -23,18 +23,47 @@ export const getSearchResult = (data, term) => {
   }
 }
 
+export const getReadPost = () => {
+  const readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  const data = readPost ? readPost : [];
+  return {
+    type: 'GET_READ_POST',
+    payload: data
+  }
+}
+
+export const setReadPost = id => {
+  let readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  let data;
+  if(readPost) {
+    readPost.push(id);
+  } else {
+    readPost = [id];
+  }
+  data = readPost;
+  readPost = JSON.stringify(readPost);
+  localStorage.setItem('reactZunoPostsRead', readPost);
+  return {
+    type: 'SET_READ_POST',
+    payload: data
+  }
+}
+
+export const unsetReadPost = id => {
+  let readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  let data;
+  readPost.push(id);
+  readPost = readPost.filter(one=>one!==id);
+  data = readPost;
+  readPost = JSON.stringify(readPost);
+  localStorage.setItem('reactZunoPostsRead', readPost);
+  return {
+    type: 'UNSET_READ_POST',
+    payload: data
+  }
+}
+
 export const getFavoritePosts = () => {
-  const samplePosts = [{
-    id: 1,
-    title: 'রিঅ্যাক্ট ব্যাসিকসঃ প্রোজেক্ট সেটআপ'
-  }, {
-    id: 2,
-    title: 'রিঅ্যাক্ট ব্যাসিকসঃ জেএসএক্স(JSX) পরিচিতি'
-  }, {
-    id: 3,
-    title: 'রিঅ্যাক্ট ব্যাসিকসঃ ইলিমেন্ট (Element) রেন্ডার'
-  }]
-  localStorage.setItem('reactZunoPosts', JSON.stringify(samplePosts));
   let posts = localStorage.getItem('reactZunoPosts');
   if(posts)
     posts = JSON.parse(posts);
@@ -43,6 +72,31 @@ export const getFavoritePosts = () => {
   return {
     type: 'GET_FAV_POSTS',
     payload: posts
+  }
+}
+
+export const setFavoritePost = ({id, title}) => {
+  const MAX_FAV_POST = 3;
+  const newPost = {
+    id,
+    title
+  }
+  let items = JSON.parse(localStorage.getItem('reactZunoPosts'));
+  if(items) {
+    if(items.length >= MAX_FAV_POST) {
+      items.shift();
+      items.push(newPost);
+    } else {
+      items.push(newPost);
+    }
+  } else {
+    items = [newPost];
+  }
+  const posts = JSON.stringify(items);
+  localStorage.setItem('reactZunoPosts', posts);
+  return {
+    type: 'SET_FAV_POST',
+    payload: items
   }
 }
 
