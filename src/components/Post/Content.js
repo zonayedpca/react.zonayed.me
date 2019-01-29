@@ -12,7 +12,7 @@ const Content = ({ post }) => {
   }
   return (
     <section className="content-area">
-      <div className="title"log={console.log(post)}>
+      <div className="title">
         {post.title.rendered}
       </div>
       <div className="content">

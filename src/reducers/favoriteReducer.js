@@ -4,6 +4,8 @@ export default (state = [], action) => {
       return action.payload;
     case 'SET_FAV_POST':
       return action.payload;
+    case 'UNSET_FAV_POST':
+      return action.payload;
     default:
       return state;
   }

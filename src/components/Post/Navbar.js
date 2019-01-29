@@ -4,9 +4,11 @@ import Navbar from '../Navbar';
 
 export default() => (
   <section className="navbar-post-area">
-    <Navbar />
+    <div>
+      <Navbar />
+    </div>
     <div className="feedback">
-      Feedback?
+      <a className="btn-problem" href="https://github.com/zonayedpca/react.zonayed.me/issues" target="_blank" rel="noopener noreferrer">সমস্যা</a>
     </div>
   </section>
 )

@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import handleLocalStorage from '../utils/handleLocalStorage';
+
 export const getBasicPosts = () => {
   const data = axios(`https://with.zonayed.me/wp-json/wp/v2/posts?tags=172&order=asc&per_page=30&fields=id,title`);
   return {
@@ -64,14 +66,15 @@ export const unsetReadPost = id => {
 }
 
 export const getFavoritePosts = () => {
-  let posts = localStorage.getItem('reactZunoPosts');
-  if(posts)
-    posts = JSON.parse(posts);
-  else
-    posts = [];
+  // let posts = localStorage.getItem('reactZunoPosts');
+  // if(posts)
+  //   posts = JSON.parse(posts);
+  // else
+  //   posts = [];
+  // console.log(posts, handleLocalStorage.getItems);
   return {
     type: 'GET_FAV_POSTS',
-    payload: posts
+    payload: handleLocalStorage.getFavItems
   }
 }
 
@@ -94,8 +97,21 @@ export const setFavoritePost = ({id, title}) => {
   }
   const posts = JSON.stringify(items);
   localStorage.setItem('reactZunoPosts', posts);
+  // const data = handleLocalStorage.setFavoriteItem({id, title});
+  // console.log(data);
   return {
     type: 'SET_FAV_POST',
+    payload: items
+  }
+}
+
+export const unsetFavoritePost = (id) => {
+  let items = JSON.parse(localStorage.getItem('reactZunoPosts'));
+  items = items.filter(item => item.id !== id);
+  const posts = JSON.stringify(items);
+  localStorage.setItem('reactZunoPosts', posts);
+  return {
+    type: 'UNSET_FAV_POST',
     payload: items
   }
 }
