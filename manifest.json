@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "রিঅ্যাক্ট জেএস শিখুন",
+  "name": "রিঅ্যাক্ট জেএস শিখুন - সম্পূর্ন বাংলায়, জুনায়েদ আহমেদ এর সাথে",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#333",
+  "background_color": "#e7e7e7"
 }
