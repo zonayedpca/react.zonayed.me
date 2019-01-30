@@ -8,17 +8,20 @@ import Comment from './Comment';
 import { getPost } from '../../actions';
 
 class Post extends Component {
-  state = {
-    post: null
-  }
-
   componentDidMount() {
     window.scrollTo(0, 0);
     const postId = this.props.match.params.id;
     this.props.getPost(postId);
   }
 
+  setTitle = () => {
+    if(this.props.post) {
+      document.title = `${this.props.post.title.rendered} - রিঅ্যাক্ট জেএস শিখুন`;
+    }
+  }
+
   render() {
+    this.setTitle();
     return (
       <React.Fragment>
         <Navbar />
@@ -29,4 +32,4 @@ class Post extends Component {
   }
 }
 
-export default connect(null, { getPost })(Post);
+export default connect(({ postReducer }) => ({ post: postReducer }), { getPost })(Post);
