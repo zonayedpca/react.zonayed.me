@@ -402,6 +402,15 @@ li h4 a {
     width: 960px;
     margin: 0 auto;
   }
+
+  .content-area .title,
+  .content-area .content p,
+  .section-divider,
+  .content-area pre,
+  .action-button-area,
+  .comment-area {
+    width: unset;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -429,6 +438,16 @@ li h4 a {
 
   .list li:nth-child(2n) img {
     display: none;
+  }
+
+  .navbar-post-area,
+  .content-area {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+  }
+
+  .content-area img {
+    max-width: 100%;
   }
 
   .footer>* {
@@ -500,6 +519,22 @@ li h4 a {
 
     .list li:last-child img {
       display: none;
+    }
+
+    .navbar-post-area {
+      text-align: center;
+    }
+
+    .navbar-post-area>div {
+      flex-basis: 100%;
+    }
+
+    .feedback {
+      display: none;
+    }
+
+    .action-button-area {
+      margin: 0 0;
     }
 
     .footer {
