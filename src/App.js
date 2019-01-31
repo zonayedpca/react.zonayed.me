@@ -21,7 +21,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/post/:id" render={(props) => <Post {...props} />} />
+          <Route exact path="/:type/:id" render={(props) => <Post {...props} />} />
           <Footer />
         </div>
       </Router>
