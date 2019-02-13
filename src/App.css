@@ -1,3 +1,13 @@
+::-moz-selection {
+  color: #61dafb;
+  background: #20232a;
+}
+
+::selection {
+  color: #61dafb;
+  background: #20232a;
+}
+
 section {
   padding: 50px 0;
 }
@@ -122,6 +132,10 @@ section {
 p.no-fav-post {
   padding: 40px 0;
   margin: 0 auto;
+}
+
+.loader {
+  padding: 100px 0;
 }
 
 .loader>div {
