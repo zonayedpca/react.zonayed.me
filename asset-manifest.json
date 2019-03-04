@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.46f00c29.chunk.css",
-  "main.js": "/static/js/main.b7ff6255.chunk.js",
-  "main.js.map": "/static/js/main.b7ff6255.chunk.js.map",
-  "static/js/1.c1b757e1.chunk.js": "/static/js/1.c1b757e1.chunk.js",
-  "static/js/1.c1b757e1.chunk.js.map": "/static/js/1.c1b757e1.chunk.js.map",
+  "main.css": "/static/css/main.de73f0e3.chunk.css",
+  "main.js": "/static/js/main.27f28d98.chunk.js",
+  "main.js.map": "/static/js/main.27f28d98.chunk.js.map",
+  "static/js/1.b9d829df.chunk.js": "/static/js/1.b9d829df.chunk.js",
+  "static/js/1.b9d829df.chunk.js.map": "/static/js/1.b9d829df.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/heart.svg": "/static/media/heart.f80307c5.svg",
@@ -13,8 +13,8 @@
   "static/media/arrownext.svg": "/static/media/arrownext.357edffb.svg",
   "static/media/arrowdown.svg": "/static/media/arrowdown.5b0f5fa3.svg",
   "static/media/index.css": "/static/media/Kalpurush.ffe190e4.svg",
-  "static/css/main.46f00c29.chunk.css.map": "/static/css/main.46f00c29.chunk.css.map",
+  "static/css/main.de73f0e3.chunk.css.map": "/static/css/main.de73f0e3.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.667d2a8b388a67aa74cb9d2f2cd7e9d1.js": "/precache-manifest.667d2a8b388a67aa74cb9d2f2cd7e9d1.js",
+  "precache-manifest.e497bbff85a4d5c15c980bbbf4aa4b5c.js": "/precache-manifest.e497bbff85a4d5c15c980bbbf4aa4b5c.js",
   "service-worker.js": "/service-worker.js"
 }
