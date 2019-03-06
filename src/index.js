@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxPromise from 'redux-promise';
@@ -13,19 +13,13 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducers, applyMiddleware(reduxPromise));
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
-if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(
+render(
   <Provider store={store}>
     <App />
-  </Provider>, rootElement);
-} else {
-  ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>, rootElement);
-}
+  </Provider>,
+rootElement);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

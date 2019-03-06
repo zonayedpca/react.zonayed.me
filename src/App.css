@@ -135,7 +135,9 @@ p.no-fav-post {
 }
 
 .loader {
+  width: 220px;
   padding: 100px 0;
+  margin: 0 auto;
 }
 
 .loader>div {
