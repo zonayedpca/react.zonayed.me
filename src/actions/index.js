@@ -3,7 +3,7 @@ import axios from 'axios';
 import handleLocalStorage from '../utils/handleLocalStorage';
 
 export const getBasicPosts = () => {
-  const data = axios(`https://with.zonayed.me/wp-json/wp/v2/posts?tags=172&order=asc&per_page=30&fields=id,title`);
+  const data = axios(`//with.zonayed.me/wp-json/wp/v2/posts?tags=172&order=asc&per_page=30&fields=id,title`);
   return {
     type: 'GET_BASIC_POSTS',
     payload: data
@@ -117,7 +117,7 @@ export const unsetFavoritePost = (id) => {
 }
 
 export const getPost = id => {
-  const data = axios(`https://with.zonayed.me/wp-json/wp/v2/posts/${id}`);
+  const data = axios(`//with.zonayed.me/wp-json/wp/v2/posts/${id}`);
 
   return {
     type: 'GET_POST',
