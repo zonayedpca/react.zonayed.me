@@ -1,69 +1,70 @@
-import axios from 'axios';
+import axios from "axios";
 
-import handleLocalStorage from '../utils/handleLocalStorage';
+import handleLocalStorage from "../utils/handleLocalStorage";
 
 export const getBasicPosts = () => {
-  const data = axios(`//with.zonayed.me/wp-json/wp/v2/posts?tags=172&order=asc&per_page=30&fields=id,title`);
+  const data = axios(`//with.zonayed.me/api/tags.json`);
+
   return {
-    type: 'GET_BASIC_POSTS',
+    type: "GET_BASIC_POSTS",
     payload: data
-  }
-}
+  };
+};
 
 export const searchVisibility = visible => {
   return {
-    type: 'SHOW_SEARCH_RESULT',
+    type: "SHOW_SEARCH_RESULT",
     visible
-  }
-}
+  };
+};
 
 export const getSearchResult = (data, term) => {
   return {
-    type: 'GET_SEARCH_RESULT',
+    type: "GET_SEARCH_RESULT",
     term,
-    data
-  }
-}
+    data: data.react
+  };
+};
 
 export const getReadPost = () => {
-  const readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  const readPost = JSON.parse(localStorage.getItem("reactZunoPostsRead"));
   const data = readPost ? readPost : [];
   return {
-    type: 'GET_READ_POST',
+    type: "GET_READ_POST",
     payload: data
-  }
-}
+  };
+};
 
 export const setReadPost = id => {
-  let readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  let readPost = JSON.parse(localStorage.getItem("reactZunoPostsRead"));
   let data;
-  if(readPost) {
+  if (readPost) {
     readPost.push(id);
   } else {
     readPost = [id];
   }
   data = readPost;
   readPost = JSON.stringify(readPost);
-  localStorage.setItem('reactZunoPostsRead', readPost);
+  localStorage.setItem("reactZunoPostsRead", readPost);
   return {
-    type: 'SET_READ_POST',
+    type: "SET_READ_POST",
     payload: data
-  }
-}
+  };
+};
 
 export const unsetReadPost = id => {
-  let readPost = JSON.parse(localStorage.getItem('reactZunoPostsRead'));
+  let readPost = JSON.parse(localStorage.getItem("reactZunoPostsRead"));
   let data;
   readPost.push(id);
-  readPost = readPost.filter(one=>one!==id);
+  readPost = readPost.filter(one => one !== id);
   data = readPost;
   readPost = JSON.stringify(readPost);
-  localStorage.setItem('reactZunoPostsRead', readPost);
+  localStorage.setItem("reactZunoPostsRead", readPost);
   return {
-    type: 'UNSET_READ_POST',
+    type: "UNSET_READ_POST",
     payload: data
-  }
-}
+  };
+};
 
 export const getFavoritePosts = () => {
   // let posts = localStorage.getItem('reactZunoPosts');
@@ -73,20 +74,20 @@ export const getFavoritePosts = () => {
   //   posts = [];
   // console.log(posts, handleLocalStorage.getItems);
   return {
-    type: 'GET_FAV_POSTS',
+    type: "GET_FAV_POSTS",
     payload: handleLocalStorage.getFavItems
-  }
-}
+  };
+};
 
-export const setFavoritePost = ({id, title}) => {
+export const setFavoritePost = ({ id, title }) => {
   const MAX_FAV_POST = 3;
   const newPost = {
     id,
     title
-  }
-  let items = JSON.parse(localStorage.getItem('reactZunoPosts'));
-  if(items) {
-    if(items.length >= MAX_FAV_POST) {
+  };
+  let items = JSON.parse(localStorage.getItem("reactZunoPosts"));
+  if (items) {
+    if (items.length >= MAX_FAV_POST) {
       items.shift();
       items.push(newPost);
     } else {
@@ -96,31 +97,28 @@ export const setFavoritePost = ({id, title}) => {
     items = [newPost];
   }
   const posts = JSON.stringify(items);
-  localStorage.setItem('reactZunoPosts', posts);
-  // const data = handleLocalStorage.setFavoriteItem({id, title});
-  // console.log(data);
+  localStorage.setItem("reactZunoPosts", posts);
   return {
-    type: 'SET_FAV_POST',
+    type: "SET_FAV_POST",
     payload: items
-  }
-}
+  };
+};
 
-export const unsetFavoritePost = (id) => {
-  let items = JSON.parse(localStorage.getItem('reactZunoPosts'));
+export const unsetFavoritePost = id => {
+  let items = JSON.parse(localStorage.getItem("reactZunoPosts"));
   items = items.filter(item => item.id !== id);
   const posts = JSON.stringify(items);
-  localStorage.setItem('reactZunoPosts', posts);
+  localStorage.setItem("reactZunoPosts", posts);
   return {
-    type: 'UNSET_FAV_POST',
+    type: "UNSET_FAV_POST",
     payload: items
-  }
-}
+  };
+};
 
-export const getPost = id => {
-  const data = axios(`//with.zonayed.me/wp-json/wp/v2/posts/${id}`);
-
+export const getPost = contentDir => {
+  const data = axios(`//with.zonayed.me/api/${contentDir}.json`);
   return {
-    type: 'GET_POST',
+    type: "GET_POST",
     payload: data
-  }
-}
+  };
+};

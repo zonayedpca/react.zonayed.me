@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-import Navbar from './Navbar';
-import Content from './Content';
-import Comment from './Comment';
+import Navbar from "./Navbar";
+import Content from "./Content";
+import Comment from "./Comment";
 
-import { getPost } from '../../actions';
+import { getPost } from "../../actions";
 
 class Post extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
-    const postId = this.props.match.params.id;
-    this.props.getPost(postId);
+    const { contentDir } = this.props.location.state;
+    this.props.getPost(contentDir);
   }
 
   setTitle = () => {
-    if(this.props.post) {
-      document.title = `${this.props.post.title.rendered} - রিঅ্যাক্ট জেএস শিখুন`;
+    if (this.props.post) {
+      document.title = `${this.props.post.title} - রিঅ্যাক্ট জেএস শিখুন`;
     }
-  }
+  };
 
   render() {
     this.setTitle();
@@ -28,8 +28,10 @@ class Post extends Component {
         <Content />
         <Comment />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default connect(({ postReducer }) => ({ post: postReducer }), { getPost })(Post);
+export default connect(({ postReducer }) => ({ post: postReducer }), {
+  getPost
+})(Post);
